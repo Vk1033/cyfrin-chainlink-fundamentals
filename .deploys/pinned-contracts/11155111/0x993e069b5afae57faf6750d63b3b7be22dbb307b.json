@@ -1,0 +1,33 @@
+{
+  "name": "EventEmitter",
+  "address": "0x993e069b5afae57faf6750d63b3b7be22dbb307b",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "msgSender",
+          "type": "address"
+        }
+      ],
+      "name": "WantsToCount",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "emitCountLog",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "filePath": "cyfrin-chainlink/contracts/log-trigger/EventEmitter.sol",
+  "pinnedAt": 1752168168822
+}
