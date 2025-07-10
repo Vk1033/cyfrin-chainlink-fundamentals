@@ -1,0 +1,28 @@
+{
+  "name": "TimeBased",
+  "address": "0x51ed5461c43f083228c2c95a3ca56fc9adc49bd8",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "count",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "counter",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "filePath": "cyfrin-chainlink/contracts/TimeBased.sol",
+  "pinnedAt": 1752154147066
+}
