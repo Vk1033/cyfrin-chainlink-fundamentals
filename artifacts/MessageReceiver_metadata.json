@@ -1,0 +1,282 @@
+{
+	"compiler": {
+		"version": "0.8.30+commit.73712a01"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "router",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "router",
+						"type": "address"
+					}
+				],
+				"name": "InvalidRouter",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "messageId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint64",
+						"name": "sourceChainSelector",
+						"type": "uint64"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "text",
+						"type": "string"
+					}
+				],
+				"name": "MessageReceived",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "messageId",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint64",
+								"name": "sourceChainSelector",
+								"type": "uint64"
+							},
+							{
+								"internalType": "bytes",
+								"name": "sender",
+								"type": "bytes"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "token",
+										"type": "address"
+									},
+									{
+										"internalType": "uint256",
+										"name": "amount",
+										"type": "uint256"
+									}
+								],
+								"internalType": "struct Client.EVMTokenAmount[]",
+								"name": "destTokenAmounts",
+								"type": "tuple[]"
+							}
+						],
+						"internalType": "struct Client.Any2EVMMessage",
+						"name": "message",
+						"type": "tuple"
+					}
+				],
+				"name": "ccipReceive",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getLastReceivedMessageDetails",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "messageId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "string",
+						"name": "text",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getRouter",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"ccipReceive((bytes32,uint64,bytes,bytes,(address,uint256)[]))": {
+					"details": "Note ensure you check the msg.sender is the OffRampRouter",
+					"params": {
+						"message": "CCIP Message"
+					}
+				},
+				"constructor": {
+					"params": {
+						"router": "The address of the router contract."
+					}
+				},
+				"getLastReceivedMessageDetails()": {
+					"returns": {
+						"messageId": "The ID of the last received message.",
+						"text": "The last received text."
+					}
+				},
+				"getRouter()": {
+					"returns": {
+						"_0": "CCIP router address"
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"details": "Should indicate whether the contract implements IAny2EVMMessageReceiver e.g. return interfaceId == type(IAny2EVMMessageReceiver).interfaceId || interfaceId == type(IERC165).interfaceId This allows CCIP to check if ccipReceive is available before calling it. If this returns false or reverts, only tokens are transferred to the receiver. If this returns true, tokens are transferred and ccipReceive is called atomically. Additionally, if the receiver address does not have code associated with it at the time of execution (EXTCODESIZE returns 0), only tokens will be transferred.",
+					"params": {
+						"interfaceId": "The interfaceId to check"
+					},
+					"returns": {
+						"_0": "true if the interfaceId is supported"
+					}
+				}
+			},
+			"title": "- A simple contract for receiving string data across chains.",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"ccipReceive((bytes32,uint64,bytes,bytes,(address,uint256)[]))": {
+					"notice": "Called by the Router to deliver a message. If this reverts, any token transfers also revert. The message will move to a FAILED state and become available for manual execution."
+				},
+				"constructor": {
+					"notice": "Constructor initializes the contract with the router address."
+				},
+				"getLastReceivedMessageDetails()": {
+					"notice": "Fetches the details of the last received message."
+				},
+				"getRouter()": {
+					"notice": "Return the current router"
+				},
+				"supportsInterface(bytes4)": {
+					"notice": "IERC165 supports an interfaceId"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/chainlink-local/MessageReceiver.sol": "MessageReceiver"
+		},
+		"evmVersion": "prague",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts@1.3.0/src/v0.8/ccip/applications/CCIPReceiver.sol": {
+			"keccak256": "0xdfac759d9e7f181e17154daebb2478b76c28c57003b836a3ea06a6a1e6c65e29",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3ef1faec84093b4e91f7976adf039900921903e376922485a91ed3b64986a98a",
+				"dweb:/ipfs/QmX2UuFKBAsrngFEu3ue3g9gSsnfNWfBqaRE5NS7jvka3S"
+			]
+		},
+		"@chainlink/contracts@1.3.0/src/v0.8/ccip/interfaces/IAny2EVMMessageReceiver.sol": {
+			"keccak256": "0x97bcf80c56b5ed4b30a351e3c3b6d5f28f053d4d601894a5067c4e697a00b74d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ddb0dd0de43ce4088b519a4636f8a66db9ac797d942cdc4921ba81ca1ce2f96f",
+				"dweb:/ipfs/QmRrHtoP91KQNewgiDJituPCRXcXsKTuHQopnj7a5sZXYv"
+			]
+		},
+		"@chainlink/contracts@1.3.0/src/v0.8/ccip/libraries/Client.sol": {
+			"keccak256": "0x052174af3c87abcbf5e7754f3d3aa9d0ff5054ecef0d9d01ef087c28a468bb0b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://21399eff44df1451cdd811be827f453a37c656f91fb139c33ba6d1aaffabb771",
+				"dweb:/ipfs/QmSMZ7pC7HURgUHUmFwEcJq7S5rRbjCEGn6YydbeyieM7E"
+			]
+		},
+		"@chainlink/contracts@1.3.0/src/v0.8/vendor/openzeppelin-solidity/v5.0.2/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0x4296879f55019b23e135000eb36896057e7101fb7fb859c5ef690cf14643757b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://87b3541437c8c443ccd36795e56a338ed12855eec17f8da624511b8d1a7e14df",
+				"dweb:/ipfs/QmeJQCtZrQjtJLr6u7ZHWeH3pBnjtLWzvRrKViAi7UZqxL"
+			]
+		},
+		"contracts/chainlink-local/MessageReceiver.sol": {
+			"keccak256": "0xc6b085076200d86aa7e240a532820b52d2851a15c84323823dbd48f733f209d5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a8f3547442905dcd856e476d4a1c9208a8af8300101873488a6867962efbfb8",
+				"dweb:/ipfs/QmejNutNH7PhJ37YzdkSaqCSvjYscMoker8njmhqMw65rW"
+			]
+		}
+	},
+	"version": 1
+}
