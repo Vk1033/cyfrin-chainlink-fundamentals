@@ -1,33 +1,7 @@
 {
-  "name": "CCIPTokenSender",
-  "address": "0x73f3d642fa614015f2b4903251767b393a896aa1",
+  "name": "Sender",
+  "address": "0x5a9ebf257ac6919eab80d736a024a71e35275704",
   "abi": [
-    {
-      "inputs": [
-        {
-          "internalType": "contract IERC20",
-          "name": "token",
-          "type": "address"
-        },
-        {
-          "internalType": "uint256",
-          "name": "currentBalance",
-          "type": "uint256"
-        },
-        {
-          "internalType": "uint256",
-          "name": "requiredAmount",
-          "type": "uint256"
-        }
-      ],
-      "name": "CCIPTokenSender__InsufficientBalance",
-      "type": "error"
-    },
-    {
-      "inputs": [],
-      "name": "CCIPTokenSender__NothingToWithdraw",
-      "type": "error"
-    },
     {
       "inputs": [
         {
@@ -48,6 +22,32 @@
         }
       ],
       "name": "OwnableUnauthorizedAccount",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IERC20",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "currentBalance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "requiredAmount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Sender__InsufficientBalance",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "Sender__NothingToWithdraw",
       "type": "error"
     },
     {
@@ -137,6 +137,11 @@
           "internalType": "uint256",
           "name": "_amount",
           "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_target",
+          "type": "address"
         }
       ],
       "name": "transferTokens",
@@ -182,6 +187,6 @@
       "type": "function"
     }
   ],
-  "filePath": "CCIP/contracts/CCIPTokenSender.sol",
-  "pinnedAt": 1752209044977
+  "filePath": "CCIP/contracts/Sender.sol",
+  "pinnedAt": 1752476159923
 }
