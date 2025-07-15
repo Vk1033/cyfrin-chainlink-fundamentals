@@ -1,0 +1,295 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "poolIds",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "claimRewards",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "getAvailableRewardPoolIds",
+				"outputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "",
+						"type": "bytes32[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "poolId",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint192",
+								"name": "amount",
+								"type": "uint192"
+							}
+						],
+						"internalType": "struct IRewardManager.FeePayment[]",
+						"name": "payments",
+						"type": "tuple[]"
+					},
+					{
+						"internalType": "address",
+						"name": "payee",
+						"type": "address"
+					}
+				],
+				"name": "onFeePaid",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address[]",
+						"name": "recipients",
+						"type": "address[]"
+					}
+				],
+				"name": "payRecipients",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newFeeManager",
+						"type": "address"
+					}
+				],
+				"name": "setFeeManager",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "addr",
+								"type": "address"
+							},
+							{
+								"internalType": "uint64",
+								"name": "weight",
+								"type": "uint64"
+							}
+						],
+						"internalType": "struct Common.AddressAndWeight[]",
+						"name": "rewardRecipientAndWeights",
+						"type": "tuple[]"
+					}
+				],
+				"name": "setRewardRecipients",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "poolId",
+						"type": "bytes32"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "addr",
+								"type": "address"
+							},
+							{
+								"internalType": "uint64",
+								"name": "weight",
+								"type": "uint64"
+							}
+						],
+						"internalType": "struct Common.AddressAndWeight[]",
+						"name": "newRewardRecipients",
+						"type": "tuple[]"
+					}
+				],
+				"name": "updateRewardRecipients",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"claimRewards(bytes32[])": {
+					"params": {
+						"poolIds": "array of poolIds to claim rewards for"
+					}
+				},
+				"getAvailableRewardPoolIds(address,uint256,uint256)": {
+					"params": {
+						"endIndex": "the index to stop at",
+						"recipient": "address of the recipient to get pool ids for",
+						"startIndex": "the index to start from"
+					}
+				},
+				"onFeePaid((bytes32,uint192)[],address)": {
+					"params": {
+						"payee": "the user the funds should be retrieved from",
+						"payments": "array of structs containing pool id and amount"
+					}
+				},
+				"payRecipients(bytes32,address[])": {
+					"params": {
+						"poolId": "the pool id to pay recipients for",
+						"recipients": "array of recipients to pay within the pool"
+					}
+				},
+				"setFeeManager(address)": {
+					"params": {
+						"newFeeManager": "address of the new verifier proxy"
+					}
+				},
+				"setRewardRecipients(bytes32,(address,uint64)[])": {
+					"params": {
+						"poolId": "poolId to set RewardRecipients and weights for",
+						"rewardRecipientAndWeights": "array of each RewardRecipient and associated weight"
+					}
+				},
+				"supportsInterface(bytes4)": {
+					"details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+				},
+				"updateRewardRecipients(bytes32,(address,uint64)[])": {
+					"params": {
+						"newRewardRecipients": "array of new reward recipients",
+						"poolId": "the poolId to update"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"claimRewards(bytes32[])": {
+					"notice": "Claims the rewards in a specific pool"
+				},
+				"getAvailableRewardPoolIds(address,uint256,uint256)": {
+					"notice": "Gets a list of pool ids which have reward for a specific recipient."
+				},
+				"onFeePaid((bytes32,uint192)[],address)": {
+					"notice": "Record the fee received for a particular pool"
+				},
+				"payRecipients(bytes32,address[])": {
+					"notice": "Pays all the recipients for each of the pool ids"
+				},
+				"setFeeManager(address)": {
+					"notice": "Sets the fee manager. This needs to be done post construction to prevent a circular dependency."
+				},
+				"setRewardRecipients(bytes32,(address,uint64)[])": {
+					"notice": "Set the RewardRecipients and weights for a specific pool. This should only be called once per pool Id. Else updateRewardRecipients should be used."
+				},
+				"updateRewardRecipients(bytes32,(address,uint64)[])": {
+					"notice": "Updates a subset the reward recipients for a specific poolId. The collective weight of the recipients should add up to the recipients existing weights. Any recipients with a weight of 0 will be removed."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/StreamsUpkeep_flattened.sol": "IRewardManager"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/StreamsUpkeep_flattened.sol": {
+			"keccak256": "0x1ad2448bacb7b6b8b84de1324f3b3906f827d0f79f8c1682b235f027cee605bd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0070ddab68a459e006016cc6e2e055edae9cd6d5ec1e09f6be7d907e3b1fbbe6",
+				"dweb:/ipfs/QmVUdZcvbD4ZZhjmTYzpp7yiJMR9CJ728LWv9bSP2aBgrF"
+			]
+		}
+	},
+	"version": 1
+}

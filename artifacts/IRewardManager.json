@@ -1,0 +1,246 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"claimRewards(bytes32[])": "0f3c34d1",
+			"getAvailableRewardPoolIds(address,uint256,uint256)": "47226475",
+			"onFeePaid((bytes32,uint192)[],address)": "b0d9fa19",
+			"payRecipients(bytes32,address[])": "4d322084",
+			"setFeeManager(address)": "472d35b9",
+			"setRewardRecipients(bytes32,(address,uint64)[])": "14060f23",
+			"supportsInterface(bytes4)": "01ffc9a7",
+			"updateRewardRecipients(bytes32,(address,uint64)[])": "4944832f"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "poolIds",
+					"type": "bytes32[]"
+				}
+			],
+			"name": "claimRewards",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "recipient",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "startIndex",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "endIndex",
+					"type": "uint256"
+				}
+			],
+			"name": "getAvailableRewardPoolIds",
+			"outputs": [
+				{
+					"internalType": "bytes32[]",
+					"name": "",
+					"type": "bytes32[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"components": [
+						{
+							"internalType": "bytes32",
+							"name": "poolId",
+							"type": "bytes32"
+						},
+						{
+							"internalType": "uint192",
+							"name": "amount",
+							"type": "uint192"
+						}
+					],
+					"internalType": "struct IRewardManager.FeePayment[]",
+					"name": "payments",
+					"type": "tuple[]"
+				},
+				{
+					"internalType": "address",
+					"name": "payee",
+					"type": "address"
+				}
+			],
+			"name": "onFeePaid",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "poolId",
+					"type": "bytes32"
+				},
+				{
+					"internalType": "address[]",
+					"name": "recipients",
+					"type": "address[]"
+				}
+			],
+			"name": "payRecipients",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "newFeeManager",
+					"type": "address"
+				}
+			],
+			"name": "setFeeManager",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "poolId",
+					"type": "bytes32"
+				},
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint64",
+							"name": "weight",
+							"type": "uint64"
+						}
+					],
+					"internalType": "struct Common.AddressAndWeight[]",
+					"name": "rewardRecipientAndWeights",
+					"type": "tuple[]"
+				}
+			],
+			"name": "setRewardRecipients",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes4",
+					"name": "interfaceId",
+					"type": "bytes4"
+				}
+			],
+			"name": "supportsInterface",
+			"outputs": [
+				{
+					"internalType": "bool",
+					"name": "",
+					"type": "bool"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes32",
+					"name": "poolId",
+					"type": "bytes32"
+				},
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "addr",
+							"type": "address"
+						},
+						{
+							"internalType": "uint64",
+							"name": "weight",
+							"type": "uint64"
+						}
+					],
+					"internalType": "struct Common.AddressAndWeight[]",
+					"name": "newRewardRecipients",
+					"type": "tuple[]"
+				}
+			],
+			"name": "updateRewardRecipients",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

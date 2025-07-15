@@ -1,0 +1,163 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "feedParamKey",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "feeds",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string",
+						"name": "timeParamKey",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "time",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "StreamsLookup",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "values",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "checkCallback",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "upkeepNeeded",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "performData",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "errCode",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "checkErrorHandler",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "upkeepNeeded",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "performData",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"checkCallback(bytes[],bytes)": {
+					"params": {
+						"extraData": "context data from streams lookup process.",
+						"values": "an array of bytes returned from data streams endpoint."
+					},
+					"returns": {
+						"performData": "bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.",
+						"upkeepNeeded": "boolean to indicate whether the keeper should call performUpkeep or not."
+					}
+				},
+				"checkErrorHandler(uint256,bytes)": {
+					"params": {
+						"errCode": "an uint value that represents the streams lookup error code.",
+						"extraData": "context data from streams lookup process."
+					},
+					"returns": {
+						"performData": "bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.",
+						"upkeepNeeded": "boolean to indicate whether the keeper should call performUpkeep or not."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"checkCallback(bytes[],bytes)": {
+					"notice": "any contract which wants to utilize StreamsLookup feature needs to implement this interface as well as the automation compatible interface."
+				},
+				"checkErrorHandler(uint256,bytes)": {
+					"notice": "this is a new, optional function in streams lookup. It is meant to surface streams lookup errors."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/StreamsUpkeep_flattened.sol": "StreamsLookupCompatibleInterface"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/StreamsUpkeep_flattened.sol": {
+			"keccak256": "0x1ad2448bacb7b6b8b84de1324f3b3906f827d0f79f8c1682b235f027cee605bd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0070ddab68a459e006016cc6e2e055edae9cd6d5ec1e09f6be7d907e3b1fbbe6",
+				"dweb:/ipfs/QmVUdZcvbD4ZZhjmTYzpp7yiJMR9CJ728LWv9bSP2aBgrF"
+			]
+		}
+	},
+	"version": 1
+}

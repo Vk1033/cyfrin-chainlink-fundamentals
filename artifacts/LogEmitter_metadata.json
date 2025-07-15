@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "msgSender",
+						"type": "address"
+					}
+				],
+				"name": "Log",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "emitLog",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/LogEmitter.sol": "LogEmitter"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/LogEmitter.sol": {
+			"keccak256": "0xf2c80a7f68548b5bd5b1617bc477c1415829508694f1945c68ae5b5d7adebf33",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7633901c5ad03d25bf01f5d9e64f97a6444d47aaac6200106851fbbcb311ed46",
+				"dweb:/ipfs/QmbFcWM6a2hJPJuYbngTyEj3FNzB9S94jJKUc7xxBd8YPG"
+			]
+		}
+	},
+	"version": 1
+}

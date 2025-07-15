@@ -1,0 +1,95 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"s_feeManager()": "38416b5b",
+			"verify(bytes,bytes)": "f7e83aee"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "s_feeManager",
+			"outputs": [
+				{
+					"internalType": "contract IVerifierFeeManager",
+					"name": "",
+					"type": "address"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "bytes",
+					"name": "payload",
+					"type": "bytes"
+				},
+				{
+					"internalType": "bytes",
+					"name": "parameterPayload",
+					"type": "bytes"
+				}
+			],
+			"name": "verify",
+			"outputs": [
+				{
+					"internalType": "bytes",
+					"name": "verifierResponse",
+					"type": "bytes"
+				}
+			],
+			"stateMutability": "payable",
+			"type": "function"
+		}
+	]
+}

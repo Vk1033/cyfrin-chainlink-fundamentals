@@ -1,0 +1,335 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "version",
+						"type": "uint16"
+					}
+				],
+				"name": "InvalidReportVersion",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "feedParamKey",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "feeds",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string",
+						"name": "timeParamKey",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "time",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "StreamsLookup",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "DATASTREAMS_FEEDLABEL",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "DATASTREAMS_QUERYLABEL",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "VERIFIER",
+				"outputs": [
+					{
+						"internalType": "contract IVerifierProxy",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes[]",
+						"name": "values",
+						"type": "bytes[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "extraData",
+						"type": "bytes"
+					}
+				],
+				"name": "checkCallback",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "checkErrorHandler",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "upkeepNeeded",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "performData",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "index",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timestamp",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "txHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "uint256",
+								"name": "blockNumber",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "blockHash",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "address",
+								"name": "source",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32[]",
+								"name": "topics",
+								"type": "bytes32[]"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct Log",
+						"name": "log",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"name": "checkLog",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "feedIds",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastDecodedPrice",
+				"outputs": [
+					{
+						"internalType": "int192",
+						"name": "",
+						"type": "int192"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "performData",
+						"type": "bytes"
+					}
+				],
+				"name": "performUpkeep",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"checkCallback(bytes[],bytes)": {
+					"params": {
+						"extraData": "context data from streams lookup process.",
+						"values": "an array of bytes returned from data streams endpoint."
+					},
+					"returns": {
+						"_0": "boolean to indicate whether the keeper should call performUpkeep or not.",
+						"_1": "bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`."
+					}
+				},
+				"checkErrorHandler(uint256,bytes)": {
+					"returns": {
+						"performData": "bytes that the keeper should call performUpkeep with, if upkeep is needed. If you would like to encode data to decode later, try `abi.encode`.",
+						"upkeepNeeded": "boolean to indicate whether the keeper should call performUpkeep or not."
+					}
+				},
+				"performUpkeep(bytes)": {
+					"details": "The input to this method should not be trusted, and the caller of the method should not even be restricted to any single registry. Anyone should be able call it, and the input should be validated, there is no guarantee that the data passed in is the performData returned from checkUpkeep. This could happen due to malicious keepers, racing keepers, or simply a state change while the performUpkeep transaction is waiting for confirmation. Always validate the data passed in.",
+					"params": {
+						"performData": "is the data which was passed back from the checkData simulation. If it is encoded, it can easily be decoded into other types by calling `abi.decode`. This data should not be trusted, and should be validated against the contract's current state."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"checkCallback(bytes[],bytes)": {
+					"notice": "any contract which wants to utilize StreamsLookup feature needs to implement this interface as well as the automation compatible interface."
+				},
+				"checkErrorHandler(uint256,bytes)": {
+					"notice": "this is a new, optional function in streams lookup. It is meant to surface streams lookup errors."
+				},
+				"performUpkeep(bytes)": {
+					"notice": "method that is actually executed by the keepers, via the registry. The data returned by the checkUpkeep simulation will be passed into this method to actually be executed."
+				}
+			},
+			"notice": "THIS IS AN EXAMPLE CONTRACT THAT USES UN-AUDITED CODE FOR DEMONSTRATION PURPOSES. DO NOT USE THIS CODE IN PRODUCTION.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/StreamsUpkeep_flattened.sol": "StreamsUpkeep"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/StreamsUpkeep_flattened.sol": {
+			"keccak256": "0x1ad2448bacb7b6b8b84de1324f3b3906f827d0f79f8c1682b235f027cee605bd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0070ddab68a459e006016cc6e2e055edae9cd6d5ec1e09f6be7d907e3b1fbbe6",
+				"dweb:/ipfs/QmVUdZcvbD4ZZhjmTYzpp7yiJMR9CJ728LWv9bSP2aBgrF"
+			]
+		}
+	},
+	"version": 1
+}

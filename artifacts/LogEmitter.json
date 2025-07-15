@@ -1,0 +1,93 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "6080604052348015600f57600080fd5b5060b08061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063f42c13bf14602d575b600080fd5b60336035565b005b3373ffffffffffffffffffffffffffffffffffffffff167fb8a00d6d8ca1be30bfec34d8f97e55f0f0fd9eeb7fb46e030516363d4cfe1ad660405160405180910390a256fea2646970667358221220fb706086f02884a6ae6da4872713da7e40a48267fea46cb34165252ac2648e9664736f6c63430008130033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0xB0 DUP1 PUSH2 0x1E PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x28 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xF42C13BF EQ PUSH1 0x2D JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x33 PUSH1 0x35 JUMP JUMPDEST STOP JUMPDEST CALLER PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND PUSH32 0xB8A00D6D8CA1BE30BFEC34D8F97E55F0F0FD9EEB7FB46E030516363D4CFE1AD6 PUSH1 0x40 MLOAD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 LOG2 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xFB PUSH17 0x6086F02884A6AE6DA4872713DA7E40A482 PUSH8 0xFEA46CB34165252A 0xC2 PUSH5 0x8E9664736F PUSH13 0x63430008130033000000000000 ",
+			"sourceMap": "61:140:0:-:0;;;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {
+				"@emitLog_14": {
+					"entryPoint": 53,
+					"id": 14,
+					"parameterSlots": 0,
+					"returnSlots": 0
+				}
+			},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "6080604052348015600f57600080fd5b506004361060285760003560e01c8063f42c13bf14602d575b600080fd5b60336035565b005b3373ffffffffffffffffffffffffffffffffffffffff167fb8a00d6d8ca1be30bfec34d8f97e55f0f0fd9eeb7fb46e030516363d4cfe1ad660405160405180910390a256fea2646970667358221220fb706086f02884a6ae6da4872713da7e40a48267fea46cb34165252ac2648e9664736f6c63430008130033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x28 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xF42C13BF EQ PUSH1 0x2D JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x33 PUSH1 0x35 JUMP JUMPDEST STOP JUMPDEST CALLER PUSH20 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF AND PUSH32 0xB8A00D6D8CA1BE30BFEC34D8F97E55F0F0FD9EEB7FB46E030516363D4CFE1AD6 PUSH1 0x40 MLOAD PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 LOG2 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0xFB PUSH17 0x6086F02884A6AE6DA4872713DA7E40A482 PUSH8 0xFEA46CB34165252A 0xC2 PUSH5 0x8E9664736F PUSH13 0x63430008130033000000000000 ",
+			"sourceMap": "61:140:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;133:65;;;:::i;:::-;;;179:10;175:15;;;;;;;;;;;;133:65::o"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "35200",
+				"executionCost": "87",
+				"totalCost": "35287"
+			},
+			"external": {
+				"emitLog()": "1282"
+			}
+		},
+		"methodIdentifiers": {
+			"emitLog()": "f42c13bf"
+		}
+	},
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "msgSender",
+					"type": "address"
+				}
+			],
+			"name": "Log",
+			"type": "event"
+		},
+		{
+			"inputs": [],
+			"name": "emitLog",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		}
+	]
+}

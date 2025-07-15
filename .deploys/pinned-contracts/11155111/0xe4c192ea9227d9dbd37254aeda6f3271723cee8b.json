@@ -1,0 +1,28 @@
+{
+  "name": "LogEmitter",
+  "address": "0xe4c192ea9227d9dbd37254aeda6f3271723cee8b",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "msgSender",
+          "type": "address"
+        }
+      ],
+      "name": "Log",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "emitLog",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "filePath": "DATA STREAMS/contracts/LogEmitter.sol",
+  "pinnedAt": 1752546607135
+}
